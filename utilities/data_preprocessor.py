@@ -79,3 +79,49 @@ Use Cases for PCA
 # pca_instance.save_transformed_data('transformed_data.csv') Optional
 '''
 
+class AminoEncoder:
+
+    def __init__(self):
+        # Define the standard amino acids plus the padding character 'X'
+        self.amino_acids = ['A', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'K', 'L', 'M', 'N', 'P', 'Q', 'R', 'S', 'T', 'V', 'W', 'Y', 'X']
+
+    def pad_sequence(self, seq, max_length):
+        """Function to pad the sequences."""
+        return seq.ljust(max_length, 'X')
+
+    def one_hot_encode(self, seq):
+        """One-hot encode the sequences."""
+        return [[1 if amino == aa else 0 for amino in self.amino_acids] for aa in seq]
+
+    def encode_csv(self, csv_file):
+        """Load the CSV, pad, and one-hot encode the amino sequences."""
+        
+        data = pd.read_csv(csv_file)
+        if 'Amino_encoding' not in data.columns:
+            raise ValueError("The CSV does not have the 'Amino_encoding' column")
+
+        # Find the length of the longest sequence
+        max_length = data['Amino_encoding'].str.len().max()
+
+        # Apply padding to sequences
+        data['padded_sequence'] = data['Amino_encoding'].apply(lambda x: self.pad_sequence(x, max_length))
+
+        # One-hot encode the padded sequences
+        encoded_sequences = data['padded_sequence'].apply(self.one_hot_encode)
+
+        # Convert the encoded sequences to a list of lists
+        encoded_list = encoded_sequences.apply(lambda x: [item for sublist in x for item in sublist]).tolist()
+
+        # Create a DataFrame from the flattened one-hot encoded list
+        encoded_df = pd.DataFrame(encoded_list)
+
+        # Rename columns for clarity
+        encoded_df.columns = [f'Pos_{i+1}_{aa}' for i in range(max_length) for aa in self.amino_acids]
+
+        return encoded_df
+    
+'''
+encoder = amino_encoder()
+encoded_data = encoder.encode_csv('path_to_your_csv.csv')
+
+'''
