@@ -26,7 +26,7 @@ In the dynamic and evolving realm of enzyme kinetics, quantifying the turnover n
 
 ## Installation
 
-\`\`\`bash git clone https://github.com/your_username/NeuroBoostedKcat.git \`\`\`
+\`\`\` git clone https://github.com/your_username/NeuroBoostedKcat.git \`\`\`
 
 cd NeuroBoostedKcat
 
