@@ -78,7 +78,8 @@ Share the evaluation metrics and any plots comparing the model to other methods.
 
 ## Contributing
 
-Guidelines for contributing to this repository.
+Lok Weng Bryan Cheong
+Lok.weng.b.cheong@vanderbilt.edu
 
 ---
 
