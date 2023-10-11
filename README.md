@@ -80,11 +80,6 @@ predict_kcat(sequence='your_sequence_here')
 
 Still testing
 NeuroboostedKcat model:
-- **MAE (Mean Absolute Error)**: 0.2039
-- **MSE (Mean Squared Error)**: 0.1229
-- **R2 (R-Squared)**: 0.9538
-- **RMSE (Root Mean Squared Error)**: 0.3505
-- **Pearson Correlation**: 0.9772
 
 ---
 
