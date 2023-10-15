@@ -6,6 +6,7 @@ from tensorflow.keras.regularizers import l2
 from tensorflow.keras.layers import Dropout
 import lightgbm as lgb
 import xgboost as xgb
+from sklearn.model_selection import train_test_split
 
 class SeqBoost:
     def __init__(self):
@@ -41,7 +42,7 @@ class SeqBoost:
 
         # Train NN
         self.model_nn = self._initialize_nn(X_train.shape[1])
-        self.model_nn.fit(X_train, y_train, epochs=30, batch_size=32, validation_data=(X_val, y_val))
+        self.model_nn.fit(X_train, y_train, epochs=20, batch_size=32, validation_data=(X_val, y_val))
 
         # Train GBM
         lgb_train = lgb.Dataset(X_train, y_train)
