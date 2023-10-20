@@ -10,6 +10,7 @@ In the dynamic and evolving realm of enzyme kinetics, quantifying the turnover n
 - TensorFlow/Keras
 - LightGBM
 - XGBoost
+- Neural Network
 
 ---
 
