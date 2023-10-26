@@ -80,8 +80,6 @@ predict_kcat(sequence='your_sequence_here')
 
 ## Results
 
-Still testing
-NeuroboostedKcat model:
 
 ---
 
