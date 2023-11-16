@@ -92,5 +92,4 @@ Lok.weng.b.cheong@vanderbilt.edu
 
 ## License
 
-Include the license for your project.
 """
