@@ -1,7 +1,7 @@
 # NeuroBoostedKcat: Predicting Transferase Kcat Values
 
 ## Overview
-Model stacking neural network + boosting model to predict transferase kcat values.
+Model stacking neural network + lightgbm model to predict transferase kcat values.
 
 ### Project Description
 In the dynamic and evolving realm of enzyme kinetics, quantifying the turnover number (Kcat) for Transferases plays an integral role in understanding their catalytic efficiency. NeuroBoostedKcat represents an avant-garde approach, converging deep learning with traditional boosting methodologies to predict Kcat values with enhanced precision.
